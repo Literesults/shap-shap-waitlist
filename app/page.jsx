@@ -67,7 +67,8 @@ export default function Home() {
 
   useEffect(() => {
     AOS.init();
-  }, [])
+    AOS.refreshHard()
+  }, [step])
 
   return (
     <div className="min-h-screen bg-yellow-500 select-none">
@@ -80,7 +81,7 @@ export default function Home() {
             <hr className="border-2 border-black w-1/4" /> */}
           </div>
           <div className="flex-grow flex items-center overflow-hidden">
-            <section className={`space-y-5 w-full ${step === 1 ? 'block' : 'hidden'}`}>
+            <section data-aos="fade-left" className={`space-y-5 w-full ${step === 1 ? 'block' : 'hidden'}`}>
               <div>LOGO</div>
               <div className="font-extrabold text-2xl">
                 <div>Join Shap Cab</div>
@@ -97,7 +98,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className={`space-y-5 w-full ${step === 2 ? 'block' : 'hidden'}`}>
+            <section data-aos="fade-left" className={`space-y-5 w-full ${step === 2 ? 'block' : 'hidden'}`}>
               <div>LOGO</div>
               <div className="font-extrabold text-2xl">
                 <div>Wait-list Form</div>
@@ -216,7 +217,7 @@ export default function Home() {
               </form>
             </section>
 
-            <section className={`space-y-7 w-full ${step === 3 ? 'block' : 'hidden'}`}>
+            <section data-aos="fade-left" className={`space-y-7 w-full ${step === 3 ? 'block' : 'hidden'}`}>
               <div>LOGO</div>
               <div className="font-extrabold text-2xl">
                 <div>Thanks </div>
