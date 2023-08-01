@@ -9,6 +9,7 @@ import { LiaCitySolid, LiaAngleDownSolid } from 'react-icons/lia'
 import { states, cities } from './packages/Nigeria';
 import { useEffect, useState } from 'react';
 import UseFormHandler from './hooks/formik';
+import axios from 'axios';
 
 
 export const metadata = {
@@ -19,12 +20,10 @@ export const metadata = {
 
 
 export default function Home() {
-
-  const [state, setState] = useState('')
-  const [city, setSCity] = useState('')
   const [cityArr, setCityArr] = useState([])
   const [showStates, setShowState] = useState(false)
   const [showCity, setShowCity] = useState(false)
+  const [message , setMessage] =useState('')
 
   const formHandler = UseFormHandler({
     required: {
@@ -43,8 +42,10 @@ export default function Home() {
       type: ''
     },
     onSubmit: async (value) => {
-      console.log(value);
-      
+      await axios.post(`${'https://api.hmxexpress.com/api'}/join-waitlist`, value ).then((res) => {
+        setMessage(res.data.message)
+        console.log(res);
+      })
     }
   })
 
@@ -91,7 +92,9 @@ export default function Home() {
                 </div>
               </div>
             </section>
-
+            {formHandler.proccessing && ( 
+              <div className="">proccessing</div>
+            )}
             <section className="space-y-5 w-full">
               <div>LOGO</div>
               <div className="font-extrabold text-2xl">

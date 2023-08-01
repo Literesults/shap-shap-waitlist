@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 
 function UseFormHandler(props) {
     const [value, setValues] = useState(props.initialValues || {})
     const [error, setError] = useState([])
+    const [proccessing, setProccessing] = useState(false)
     const required = props.required
     const handlerChange = name => text => {
         setValues(prevValue => ({ ...prevValue, [name]: text }))
@@ -17,14 +18,16 @@ function UseFormHandler(props) {
             }
         }
         setError(error[0])
-        console.log(error[0])
         return error
     }
 
     const submit = async () => {
         let err = await validator()
         if (err.length <= 0) {
-            return props.onSubmit(value)
+            setProccessing(true)
+            await props.onSubmit(value)
+            setProccessing(false)
+            return;
         }
     }
 
@@ -32,7 +35,7 @@ function UseFormHandler(props) {
         setValues(prevValue => ({ ...prevValue, [name]: props.initialValues }))
     }
 
-    return { value, setValues, handlerChange, submit, reset, error }
+    return { value, setValues, handlerChange, submit, reset, error, proccessing }
 }
 
 export default UseFormHandler
