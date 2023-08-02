@@ -71,16 +71,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-yellow-500 select-none">
       <div className="max-w-7xl md:px-5 min-h-screen mx-auto grid md:grid-cols-2 lg:grid-cols-3">
-        <div className="lg:col-span-2 hidden md:block"></div>
+        <div className="lg:col-span-2 hidden md:block">
+          
+        </div>
         <div className="bg-white flex flex-col p-8">
           <div className="flex gap-3">
             <hr data-aos="zoom-in" className={`border-2 border-black w-1/4 ${step > 0 ? 'block' : 'hidden'}`} />
             <hr data-aos="zoom-in" className={`border-2 border-black w-1/4 ${step > 1 ? 'block' : 'hidden'}`} />
             <hr data-aos="zoom-in" className={`border-2 border-black w-1/4 ${step > 2 ? 'block' : 'hidden'}`} />
           </div>
-          <div className="flex-grow flex items-center overflow-hidden">
+          <div className="flex-grow flex pt-5 items-center overflow-hidden">
             <section data-aos="fade-left" className={`space-y-5 w-full ${step === 1 ? 'block' : 'hidden'}`}>
-              <div>
+              <div className="">
                 <Image src={logo} width={'80'} height={'954'} alt='shap cab logo' draggable="false" />
               </div>
               <div className="font-extrabold text-2xl">
