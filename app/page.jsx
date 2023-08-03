@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs'
-import { BiUserCircle } from 'react-icons/bi'
+import { BsArrowRight, BsInstagram } from 'react-icons/bs'
+import { BiLogoFacebook, BiLogoLinkedin, BiLogoTwitter, BiUserCircle } from 'react-icons/bi'
 import { LuSmartphone } from 'react-icons/lu'
 import { MdOutlineMarkEmailUnread } from 'react-icons/md'
 import CheckBox from './components/inputs/CheckBox';
@@ -15,6 +15,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 import logo from '../public/images/shap_cap_logo.png'
+import mockup from '../public/images/Shap_Cab.png'
 
 
 
@@ -71,8 +72,27 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-yellow-500 select-none">
       <div className="max-w-7xl md:px-5 min-h-screen mx-auto grid md:grid-cols-2 lg:grid-cols-3">
-        <div className="lg:col-span-2 hidden md:block">
-          
+        <div className="lg:col-span-2 space-y-5 hidden md:block">
+          <div className="">
+            <Image src={mockup} width={'80'} height={'954'} className="h-[400px] w-auto" alt='shap cab mockup' draggable="false" />
+          </div>
+          <div className="text-white max-w-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci maxime, sit consectetur a, veniam nulla nesciunt quidem, suscipit placeat illo reiciendis earum tempore. Maiores repellendus laudantium et labore blanditiis.
+          </div>
+          <div className="flex gap-3 pb-4">
+            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+              <BiLogoFacebook size={'17px'} />
+            </div>
+            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+              <BiLogoLinkedin size={'18px'} />
+            </div>
+            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+              <BsInstagram size={'14px'} />
+            </div>
+            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+              <BiLogoTwitter size={'20px'} />
+            </div>
+          </div>
         </div>
         <div className="bg-white flex flex-col p-8">
           <div className="flex gap-3">
