@@ -16,6 +16,7 @@ import 'aos/dist/aos.css';
 import Image from 'next/image';
 import logo from '../public/images/shap_cap_logo.png'
 import mockup from '../public/images/Shap_Cab.png'
+import car from '../public/images/car-image.png'
 
 
 
@@ -70,11 +71,12 @@ export default function Home() {
   }, [step])
 
   return (
-    <div className="min-h-screen bg-yellow-500 select-none">
-      <div className="max-w-7xl md:px-5 min-h-screen mx-auto grid md:grid-cols-2 lg:grid-cols-3">
-        <div className="lg:col-span-2 space-y-5 hidden md:block">
-          <div className="">
-            <Image src={mockup} width={'80'} height={'954'} className="h-[400px] w-auto" alt='shap cab mockup' draggable="false" />
+    <div className="min-h-screen bg-gradient-to-tr from-yellow-800 via-yellow-400 to-yellow-600 select-none">
+      <Image src={car} width={'80'} height={'954'} className="h-full w-auto absolute top-0 z-0" alt='' draggable="false" />
+      <div className="max-w-7xl md:px-5 min-h-screen mx-auto grid md:grid-cols-2 lg:grid-cols-3 relative z-20">
+        <div className="lg:col-span-2 space-y-5 hidden md:flex flex-col">
+          <div className="flex-grow">
+            
           </div>
           <div className="text-white max-w-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci maxime, sit consectetur a, veniam nulla nesciunt quidem, suscipit placeat illo reiciendis earum tempore. Maiores repellendus laudantium et labore blanditiis.
@@ -94,23 +96,23 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-white flex flex-col p-8">
+        <div className="bg-white bg-opacity-30 backdrop-blur-xl flex flex-col p-8">
           <div className="flex gap-3">
-            <hr data-aos="zoom-in" className={`border-2 border-black w-1/4 ${step > 0 ? 'block' : 'hidden'}`} />
-            <hr data-aos="zoom-in" className={`border-2 border-black w-1/4 ${step > 1 ? 'block' : 'hidden'}`} />
-            <hr data-aos="zoom-in" className={`border-2 border-black w-1/4 ${step > 2 ? 'block' : 'hidden'}`} />
+            <hr data-aos="zoom-in" className={`border-2 border-yellow-700 w-1/4 ${step > 0 ? 'block' : 'hidden'}`} />
+            <hr data-aos="zoom-in" className={`border-2 border-yellow-700 w-1/4 ${step > 1 ? 'block' : 'hidden'}`} />
+            <hr data-aos="zoom-in" className={`border-2 border-yellow-700 w-1/4 ${step > 2 ? 'block' : 'hidden'}`} />
           </div>
           <div className="flex-grow flex pt-5 items-center overflow-hidden">
             <section data-aos="fade-left" className={`space-y-5 w-full ${step === 1 ? 'block' : 'hidden'}`}>
               <div className="">
                 <Image src={logo} width={'80'} height={'954'} alt='shap cab logo' draggable="false" />
               </div>
+              <div>
+                <Image src={mockup} width={'80'} height={'250'} className="h-[285px] w-auto" alt='shap cab mockup' draggable="false" />
+              </div>
               <div className="font-extrabold text-2xl">
                 <div>Join Shap Cab</div>
                 <div>Wait-list</div>
-              </div>
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam saepe aliquid culpa. Distinctio nostrum provident reiciendis temporibus asperiores dolorum hic officia atque, maxime laboriosam laudantium nesciunt qui inventore unde. Quae.
               </div>
               <div>
                 <div onClick={() => setStep(2)} className="bg-black overflow-hidden divide-x-2 items-center hover:bg-gray-800 cursor-pointer rounded-lg flex w-full text-white">
@@ -120,7 +122,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section data-aos="fade-left" className={`space-y-5 w-full ${step === 2 ? 'block' : 'hidden'}`}>
+            <section data-aos="fade-left" className={`space-y-5 h-full overflow-hidden w-full ${step === 2 ? 'block' : 'hidden'}`}>
               <div>
                 <Image src={logo} width={'80'} height={'954'} alt='shap cab logo' draggable="false" />
               </div>
@@ -130,7 +132,7 @@ export default function Home() {
               <form onSubmit={(e) => sumitForm(e)} className="space-y-6">
                 <div className="space-y-3">
                   <div className="">
-                    <div className="rounded-md overflow-hidden bg-gray-50 border relative">
+                    <div className="rounded-md overflow-hidden bg-yellow-200 border border-yellow-300 relative">
                       <div className="absolute top-3 left-2">
                         <BiUserCircle size={'24px'} />
                       </div>
@@ -140,7 +142,7 @@ export default function Home() {
                   </div>
 
                   <div className="">
-                    <div className="rounded-md overflow-hidden bg-gray-50 border relative">
+                    <div className="rounded-md overflow-hidden bg-yellow-200 border border-yellow-300 relative">
                       <div className="absolute top-3 left-2">
                         <MdOutlineMarkEmailUnread size={'24px'} />
                       </div>
@@ -149,15 +151,16 @@ export default function Home() {
                     {formHandler.error?.email && <div className="text-red-500">{formHandler.error.email}</div>}
                   </div>
 
-                  <div className="rounded-md overflow-hidden bg-gray-50 border relative">
+                  <div className="rounded-md overflow-hidden bg-yellow-200 border border-yellow-300 relative">
                     <div className="absolute top-3 left-2">
                       <LuSmartphone size={'24px'} />
                     </div>
                     <input onChange={(e) => formHandler.value.phone = e.target.value} type="text" placeholder="Enter Phone Number" className="w-full py-3 bg-transparent focus:outline-none p-2 pl-9" />
                   </div>
 
+                  {/* the selectstarts here */}
                   <div className="">
-                    <div onMouseLeave={() => setShowState(false)} className="rounded-md cursor-pointer bg-gray-50 border relative">
+                    <div onMouseLeave={() => setShowState(false)} className="rounded-md cursor-pointer bg-yellow-200 border border-yellow-300 relative">
                       <div className="absolute top-2 left-2">
                         <LiaCitySolid size={'24px'} />
                       </div>
@@ -186,8 +189,10 @@ export default function Home() {
                     {formHandler.error?.state && <div className="text-red-500">{formHandler.error.state}</div>}
                   </div>
 
+                  {/* the select ends here */}
+
                   <div className="">
-                    <div onMouseLeave={() => setShowCity(false)} className="rounded-md cursor-pointer bg-gray-50 border relative">
+                    <div onMouseLeave={() => setShowCity(false)} className="rounded-md cursor-pointer bg-yellow-200 border border-yellow-300 relative">
                       <div className="absolute top-2 left-2">
                         <LiaCitySolid size={'24px'} />
                       </div>
@@ -218,8 +223,8 @@ export default function Home() {
 
                   <div className="">
                     <div className="flex flex-wrap gap-4 py-3">
-                      <CheckBox onChange={(e) => formHandler.value.type = e} value={'rider'} Boxlable={'rider'} display={'row'} name={'type'} type={'radio'} />
                       <CheckBox onChange={(e) => formHandler.value.type = e} value={'customer'} Boxlable={'customer'} display={'row'} name={'type'} type={'radio'} />
+                      <CheckBox onChange={(e) => formHandler.value.type = e} value={'rider'} Boxlable={'rider'} display={'row'} name={'type'} type={'radio'} />
                     </div>
                     {formHandler.error?.type && <div className="text-red-500">{formHandler.error.type}</div>}
                   </div>

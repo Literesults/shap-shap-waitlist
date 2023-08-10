@@ -15,12 +15,12 @@ function CheckBox({ name, Boxlable, type, display,value ,onChange}) {
                 onChange={(e)=>onChange(e.target.value)}
             />
             <div className="relative top-[1px] bg-white w-5 h-5 rounded-md dark:bg-gray-700 dark:border-gray-500 border peer-hover:hidden peer-checked:hidden " />
-            <div className="relative top-[1px] bg-white dark:bg-gray-700 dark:border-gray-500 w-5 h-5 text-xl rounded-md peer-checked:bg-yellow-400 hidden peer-checked:flex peer-hover:border peer-hover:flex items-center justify-center text-gray-300 peer-checked:text-white ">
+            <div className="relative top-[1px] bg-white dark:bg-gray-700 dark:border-gray-500 w-5 h-5 text-xl rounded-md peer-checked:bg-black hidden peer-checked:flex peer-hover:border peer-hover:flex items-center justify-center text-gray-300 peer-checked:text-white ">
                 <FiCheck className="" size={'14px'} />
             </div>
             <label
                 htmlFor={name + Boxlable}
-                className={`cursor-pointer flex gap-1 peer-checked:text-yellow-400 ${display === 'col' ? 'pt-8 px-2 -top-0 absolute' : 'pl-9 right-9 relative'
+                className={`cursor-pointer flex gap-1 peer-checked:text-black ${display === 'col' ? 'pt-8 px-2 -top-0 absolute' : 'pl-9 right-9 relative'
                     }`}
             >
                 <span className="first-letter:capitalize text-tertiary-base2 leading-[20px]">
