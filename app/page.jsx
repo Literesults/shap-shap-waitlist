@@ -83,7 +83,7 @@ export default function Home() {
               <p className="mb-4">
                 Are you tired of waiting endlessly for a ride when you need it the most? 
                 We understand the frustration, and that is why we are thrilled to introduce our groundbreaking 
-                new transportation solution - <strong className="text-lg">SHAP CAB!</strong>
+                new transportation solution - <strong className="text-xl">SHAP CAB!</strong>
               </p>
 
               <p>
