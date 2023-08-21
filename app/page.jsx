@@ -63,7 +63,7 @@ export default function Home() {
       formHandler.value.city = ''
       setCityArr(cty[0]?.lga)
     }
-  }, [formHandler.value.state])
+  }, [formHandler.value, formHandler.value.state])
 
   useEffect(() => {
     AOS.init();
@@ -79,7 +79,19 @@ export default function Home() {
             
           </div>
           <div className="text-white max-w-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi adipisci maxime, sit consectetur a, veniam nulla nesciunt quidem, suscipit placeat illo reiciendis earum tempore. Maiores repellendus laudantium et labore blanditiis.
+            <section className={`bg-black bg-opacity-50 py-4 px-6 rounded-lg`}>
+              <p className="mb-4">
+                Are you tired of waiting endlessly for a ride when you need it the most? 
+                We understand the frustration, and that is why we are thrilled to introduce our groundbreaking 
+                new transportation solution - <strong className="text-lg">SHAP CAB!</strong>
+              </p>
+
+              <p>
+                Don&apos;t miss out on this opportunity to be part of a transportation revolution. 
+                Join our waitlist today, and be prepared to embark on a journey that will change the way 
+                you move around your city.
+              </p>
+            </section>
           </div>
           <div className="flex gap-3 pb-4">
             <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
@@ -111,8 +123,8 @@ export default function Home() {
                 <Image src={mockup} width={'80'} height={'250'} className="h-[285px] w-auto" alt='shap cab mockup' draggable="false" />
               </div>
               <div className="font-extrabold text-2xl">
-                <div>Join Shap Cab</div>
-                <div>Wait-list</div>
+                <div>Join Shap Cab - Wait-list</div>
+                <div className="font-medium text-base md:text-sm first-letter:uppercase first-letter:italic first-letter:text-base">be first in line for a ride like no other!</div>
               </div>
               <div>
                 <div onClick={() => setStep(2)} className="bg-black overflow-hidden divide-x-2 items-center hover:bg-gray-800 cursor-pointer rounded-lg flex w-full text-white">
