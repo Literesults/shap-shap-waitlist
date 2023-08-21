@@ -63,7 +63,7 @@ export default function Home() {
       formHandler.value.city = ''
       setCityArr(cty[0]?.lga)
     }
-  }, [formHandler.value, formHandler.value.state])
+  }, [formHandler.value, formHandler.value.state]) 
 
   useEffect(() => {
     AOS.init();
