@@ -92,8 +92,8 @@ export default function Home() {
           <div className="text-white max-w-lg">
             <section className={`bg-black bg-opacity-50 py-4 px-6 rounded-lg`}>
               <p className="mb-4">
-                Are you tired of waiting endlessly for a ride when you need it the most?
-                We understand the frustration, and that is why we are thrilled to introduce our groundbreaking
+                Are you tired of waiting endlessly for a ride when you need it the most? 
+                We understand the frustration, and that is why we are thrilled to introduce our groundbreaking 
                 new transportation solution - <strong className="text-xl">SHAP CAB!</strong>
               </p>
 
