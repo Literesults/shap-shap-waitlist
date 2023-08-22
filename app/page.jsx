@@ -134,7 +134,7 @@ export default function Home() {
                 <Image src={mockup} width={'80'} height={'250'} className="h-[285px] w-auto" alt='shap cab mockup' draggable="false" />
               </div>
               <div className="font-extrabold text-2xl">
-                <div>Join Shap Cab - Wait-list</div>
+                <div>Join Shap Cab - Waitlist</div>
                 <div className="font-medium text-base md:text-sm first-letter:uppercase first-letter:italic first-letter:text-base">be first in line for a ride like no other!</div>
               </div>
               <div>
