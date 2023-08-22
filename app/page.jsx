@@ -18,6 +18,16 @@ import logo from '../public/images/shap_cap_logo.png'
 import mockup from '../public/images/Shap_Cab.png'
 import car from '../public/images/car-image.png'
 
+import {
+  FacebookShareButton,
+  WhatsappShareButton,
+  LinkedinShareButton,
+  LinkedinIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappIcon,
+  FacebookIcon,
+} from 'react-share';
 
 
 export default function Home() {
@@ -26,6 +36,7 @@ export default function Home() {
   const [showCity, setShowCity] = useState(false)
   const [message, setMessage] = useState('')
   const [step, setStep] = useState(1)
+  const shareUrl = 'https://www.shapcab.com';
 
   const formHandler = UseFormHandler({
     required: {
@@ -63,7 +74,7 @@ export default function Home() {
       formHandler.value.city = ''
       setCityArr(cty[0]?.lga)
     }
-  }, [formHandler.value, formHandler.value.state]) 
+  }, [formHandler.value, formHandler.value.state])
 
   useEffect(() => {
     AOS.init();
@@ -76,7 +87,7 @@ export default function Home() {
       <div className="max-w-7xl md:px-5 min-h-screen mx-auto grid md:grid-cols-2 lg:grid-cols-3 relative z-20">
         <div className="lg:col-span-2 space-y-5 hidden md:flex flex-col">
           <div className="flex-grow">
-            
+
           </div>
           <div className="text-white max-w-lg">
             <section className={`bg-black bg-opacity-50 py-4 px-6 rounded-lg`}>
@@ -87,8 +98,8 @@ export default function Home() {
               </p>
 
               <p>
-                Don&apos;t miss out on this opportunity to be part of a transportation revolution. 
-                Join our waitlist today, and be prepared to embark on a journey that will change the way 
+                Don&apos;t miss out on this opportunity to be part of a transportation revolution.
+                Join our waitlist today, and be prepared to embark on a journey that will change the way
                 you move around your city.
               </p>
             </section>
@@ -266,14 +277,47 @@ export default function Home() {
                 <div>Thanks </div>
                 <div>{formHandler.value.name.split(' ')[0]}</div>
               </div>
-              <div>{message}</div>
-              <div className="">
-                <Link href={'https://manage.shapcab.com/'}>
+              <div className="space-y-1">
+                <div>{message}</div>
+                <div className="">Share to your friend to join the waitlist</div>
+                <div className="flex gap-1">
+                  <FacebookShareButton
+                    url={shareUrl}
+                    image={'https://www.shapcab.com/_next/static/media/Shap_Cab.6a811b1f.png'}
+                    title={'I just joined Shapcab Waitlist🕺 join with me🙌'}
+                  >
+                    <FacebookIcon size={35} round={true} />
+                  </FacebookShareButton>
+
+                  <WhatsappShareButton
+                    url={shareUrl}
+                    image={'https://www.shapcab.com/_next/static/media/Shap_Cab.6a811b1f.png'}
+                    title={'I just joined Shapcab Waitlist🕺 join with me🙌'}
+                  >
+                    <WhatsappIcon size={35} round={true} />
+                  </WhatsappShareButton>
+                  <TwitterShareButton
+                    url={shareUrl}
+                    image={'https://www.shapcab.com/_next/static/media/Shap_Cab.6a811b1f.png'}
+                    title={'I just joined Shapcab Waitlist🕺 join with me🙌'}
+                  >
+                    <TwitterIcon size={35} round={true} />
+                  </TwitterShareButton>
+
+                  <LinkedinShareButton
+                    url={shareUrl}
+                    image={'https://www.shapcab.com/_next/static/media/Shap_Cab.6a811b1f.png'}
+                    title={'I just joined Shapcab Waitlist🕺 join with me🙌'}
+                  >
+                    <LinkedinIcon size={35} round={true} />
+                  </LinkedinShareButton>
+                </div>
+                {/* <Link href={'https://manage.shapcab.com/'}>
                   <div className="bg-black overflow-hidden divide-x-2 items-center hover:bg-gray-800 cursor-pointer rounded-lg flex w-full text-white">
                     <div className="text-center flex-grow py-3">Visit Our Website</div>
                     <div className="p-4 bg-gray-700"><BsArrowRight size={'24px'} /></div>
                   </div>
-                </Link>
+                </Link> */}
               </div>
             </section>
           </div>
