@@ -150,7 +150,7 @@ export default function Home() {
                 <Image src={logo} width={'80'} height={'954'} alt='shap cab logo' draggable="false" />
               </div>
               <div className="font-extrabold text-2xl">
-                <div>Wait-list Form</div>
+                <div>Waitlist Form</div>
               </div>
               <form onSubmit={(e) => sumitForm(e)} className="space-y-6">
                 <div className="space-y-3">
@@ -260,7 +260,7 @@ export default function Home() {
                       </div>
                     ) : (
                       <button className="bg-black overflow-hidden divide-x-2 items-center hover:bg-gray-800 cursor-pointer rounded-lg flex w-full text-white">
-                        <div className="text-center flex-grow py-3">Join Wait-list</div>
+                        <div className="text-center flex-grow py-3">Join Waitlist</div>
                         <div className="p-4 bg-gray-700"><BsArrowRight size={'24px'} /></div>
                       </button>
                     )
