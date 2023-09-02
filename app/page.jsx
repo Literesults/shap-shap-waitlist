@@ -105,18 +105,18 @@ export default function Home() {
             </section>
           </div>
           <div className="flex gap-3 pb-4">
-            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+            <Link href="https://www.facebook.com/shapcab/" className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
               <BiLogoFacebook size={'17px'} />
-            </div>
-            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+            </Link>
+            {/* <Link href="https://www.facebook.com/shapcab/" className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
               <BiLogoLinkedin size={'18px'} />
-            </div>
-            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+            </Link> */}
+            <Link href="https://instagram.com/shapcab?igshid=MzRlODBiNWFlZA==" className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
               <BsInstagram size={'14px'} />
-            </div>
-            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
+            </Link>
+            <Link href="https://twitter.com/shapcab?s=21&t=fMhxnbtVctq4_kSBCJaykQ" className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center cursor-pointer">
               <BiLogoTwitter size={'20px'} />
-            </div>
+            </Link>
           </div>
         </div>
         <div className="bg-white bg-opacity-30 backdrop-blur-xl flex flex-col p-8">
