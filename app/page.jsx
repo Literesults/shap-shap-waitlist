@@ -55,7 +55,7 @@ export default function Home() {
       type: ''
     },
     onSubmit: async (value) => {
-      await axios.post(`${'https://api.hmxexpress.com/api'}/join-waitlist`, value).then((res) => {
+      await axios.post(`${'https://api.shapcab.com/api'}/join-waitlist`, value).then((res) => {
         setMessage(res.data.message)
         setStep(3)
       })
