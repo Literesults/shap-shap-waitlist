@@ -1,0 +1,23 @@
+on:
+  pull_request:
+    branches:
+      - cpanel-deploy
+      
+name: 🚀 Deploy website on push or pull request
+jobs:
+  web-deploy:
+    name: 🎉 Deploy Staging
+    runs-on: ubuntu-latest
+    environment: development
+    
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.APP_FTP_SERVER }}
+        username: ${{ secrets.APP_FTP_USERNAME }}
+        password: ${{ secrets.APP_FTP_PASSWORD }}
+        server-dir: /waitlist/
