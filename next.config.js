@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // useFileSystemPublicRoutes: false,
     reactStrictMode: true,
     images: {
       unoptimized: true,
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'api.hmxexpress.com',
+          hostname: 'api.shapcab.com',
           port: '',
           pathname: '/*/**',
         }
