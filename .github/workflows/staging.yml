@@ -1,7 +1,7 @@
 on:
   pull_request:
     branches:
-      - cpanel-deploy
+      - cpanel-deploy-again
       
 name: 🚀 Deploy website on push or pull request
 jobs:
