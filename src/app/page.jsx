@@ -14,9 +14,9 @@ import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
-import logo from '../public/images/shap_cap_logo.png'
-import mockup from '../public/images/Shap_Cab.png'
-import car from '../public/images/car-image.png'
+import logo from '../../public/images/shap_cap_logo.png'
+import mockup from '../../public/images/Shap_Cab.png'
+import car from '../../public/images/car-image.png'
 
 import {
   FacebookShareButton,
